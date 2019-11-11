@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public void RespawnPlayer(GameObject player_to_instanciate)
     {
         GameObject go = Instantiate(player_to_instanciate,respawn_points[obstacle_pass].transform.position, respawn_points[obstacle_pass].transform.rotation);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().SetPlayer(go);
         Destroy(player_to_instanciate);
     }
 }
