@@ -31,6 +31,14 @@ public class ObstaclePath : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().obstacle_pass += 1;
+        }
+    }
+
 }
 
 
