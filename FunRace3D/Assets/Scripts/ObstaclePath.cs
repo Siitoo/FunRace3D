@@ -7,6 +7,8 @@ public class ObstaclePath : MonoBehaviour
     [HideInInspector]
     public Vector3 direction = Vector3.zero;
 
+    private Vector3 last_direction = Vector3.zero;
+
     private void Start()
     {
         switch(tag)
@@ -36,6 +38,12 @@ public class ObstaclePath : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().obstacle_pass += 1;
+
+            if(last_direction == direction)
+            {
+                collision.gameObject.GetComponent<PlayerController>().direction = Vector3.forward;
+            }
+
         }
     }
 
