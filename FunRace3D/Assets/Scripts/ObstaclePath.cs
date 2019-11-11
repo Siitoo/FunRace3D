@@ -39,11 +39,6 @@ public class ObstaclePath : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().obstacle_pass += 1;
 
-            if(last_direction == direction)
-            {
-                collision.gameObject.GetComponent<PlayerController>().direction = Vector3.forward;
-            }
-
         }
     }
 

@@ -61,6 +61,10 @@ public class PlayerController : MonoBehaviour
         {
             player_dead = true;
         }
+        else if(other.gameObject.tag == "FinalLevel")
+        {
+            GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().LoadNewLevel();
+        }
     }
 
 }

@@ -9,6 +9,7 @@ TagManager:
   - ZPath
   - Obstacle
   - LevelManager
+  - FinalLevel
   layers:
   - Default
   - TransparentFX
